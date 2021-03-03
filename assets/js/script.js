@@ -24,5 +24,19 @@ var getCityForcast = function(city) {
     });
 };
 
+// targetting the form
+var weatherFormEl = document.getElementById("city-form");
+
+// targetting the input
+var cityInputEl = document.getElementById("city");
+
+var submitButton = function(event) {
+    event.preventDefault();
+    console.log(event);
+};
+
+weatherFormEl.addEventListener("submit", submitButton);
+
+
 getCurrentCityWeather("London");
 getCityForcast("London");
