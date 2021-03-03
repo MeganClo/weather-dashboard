@@ -12,17 +12,17 @@ var getCurrentCityWeather = function(city) {
 };
 
 // getting forcast
-var getCityForcast = function(city) {
-    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7&appid=40294c6c026c149fa301c764eea53d3a";
+//var getCityForcast = function(city) {
+//    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7&appid=40294c6c026c149fa301c764eea53d3a";
 
     //make request to the url
-    fetch(apiUrl).then(function(response) {
-        console.log(response);
-        response.json().then(function(data) {
-            console.log(data);
-        });
-    });
-};
+//    fetch(apiUrl).then(function(response) {
+//        console.log(response);
+//        response.json().then(function(data) {
+//            console.log(data);
+//        });
+//    });
+//};
 
 // targetting the form
 var weatherFormEl = document.getElementById("city-form");
@@ -33,10 +33,19 @@ var cityInputEl = document.getElementById("city");
 var submitButton = function(event) {
     event.preventDefault();
     console.log(event);
+
+    var cityName = cityInputEl.value.trim();
+
+    if (cityName) {
+        getCurrentCityWeather(cityName);
+        cityInputEl.value="";
+    } else {
+        alert("Please enter a City name");
+    }
 };
 
 weatherFormEl.addEventListener("submit", submitButton);
 
 
 getCurrentCityWeather("London");
-getCityForcast("London");
+//getCityForcast("London");
