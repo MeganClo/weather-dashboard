@@ -1,3 +1,6 @@
+var weatherContainer = document.getElementById("weather-container");
+var cityName = document.querySelector("#city-search");
+
 // getting city weather
 var getCurrentCityWeather = function(city) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=da47b6e8a518f806d11e4e81cc84a11f";
@@ -45,6 +48,9 @@ var submitButton = function(event) {
 };
 
 var displayWeather = function(weather, searchTerm) {
+    //clearing the old data
+    weatherContainer.textContent = "";
+    cityName.textcontent = searchTerm;
     console.log(weather);
     console.log(searchTerm);
 }
@@ -52,5 +58,5 @@ var displayWeather = function(weather, searchTerm) {
 weatherFormEl.addEventListener("submit", submitButton);
 
 
-getCurrentCityWeather("London");
-getCityForcast("London");
+//getCurrentCityWeather("London");
+//getCityForcast("London");
