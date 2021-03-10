@@ -18,10 +18,7 @@ currentDate.textContent = moment().format("M/DD/YYYY");
 // loading cities from localstorage if they're there
 var loadCities = function() {
     cities = JSON.parse(localStorage.getItems("cities"));
-
-    if (!cities) {
-        cities = [];
-    }
+    
 };
 
 // getting city weather
@@ -50,6 +47,7 @@ var getCityForcast = function(city) {
 var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
+    loadCities();
     cities.push(cityName);
     localStorage.setItem("cities", JSON.stringify(cities));
     if (cityName) {
@@ -65,6 +63,8 @@ var displayWeather = function(weather, searchTerm) {
     cityName.textContent = searchTerm;
     console.log(weather);
     console.log(weather.main.temp);
+    console.log(weather.weather[0].icon);
+    console.log(weather.main.humidity);
     console.log(searchTerm);
 }
 
