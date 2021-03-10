@@ -7,6 +7,9 @@ var currentDate = document.getElementById("date");
 // targetting the form
 var weatherFormEl = document.getElementById("city-form");
 
+// targetting the button div
+var buttons = document.getElementById("buttons");
+
 // setting a variable to store the cities from local storage
 var cities = [];
 
@@ -17,8 +20,15 @@ currentDate.textContent = moment().format("M/DD/YYYY");
 
 // loading cities from localstorage if they're there
 var loadCities = function() {
-    cities = JSON.parse(localStorage.getItems("cities"));
-    
+    cities = JSON.parse(localStorage.getItem("cities"));
+    if (!cities) {
+        cities = []
+    };
+    cities.forEach(function() {
+        var btn = document.createElement("button");
+        btn.innerHTML = cityName;
+        buttons.appendChild(btn);
+    });
 };
 
 // getting city weather
@@ -48,7 +58,9 @@ var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
     loadCities();
-    cities.push(cityName);
+    if (!cities.includes(cityName)) {
+        cities.push(cityName);
+    };
     localStorage.setItem("cities", JSON.stringify(cities));
     if (cityName) {
         getCurrentCityWeather(cityName);
@@ -59,6 +71,8 @@ var submitButton = function(event) {
     }
 };
 
+
+
 var displayWeather = function(weather, searchTerm) {
     cityName.textContent = searchTerm;
     console.log(weather);
@@ -68,8 +82,11 @@ var displayWeather = function(weather, searchTerm) {
     console.log(searchTerm);
 }
 
+
+
 weatherFormEl.addEventListener("submit", submitButton);
 
-
+loadCities();
+console.log(cities);
 //getCurrentCityWeather("London");
 //getCityForcast("London"); 
