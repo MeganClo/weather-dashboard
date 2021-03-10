@@ -1,9 +1,28 @@
-var weatherContainer = document.getElementById("weather-container");
+// targetting where the city name will be displayed
 var cityName = document.querySelector("#city-search");
+
+// targetting where the date will be displayed 
+var currentDate = document.getElementById("date");
+
 // targetting the form
 var weatherFormEl = document.getElementById("city-form");
+
+// setting a variable to store the cities from local storage
+var cities = [];
+
 // targetting the input
 var cityInputEl = document.getElementById("city");
+
+currentDate.textContent = moment().format("M/DD/YYYY");
+
+// loading cities from localstorage if they're there
+var loadCities = function() {
+    cities = JSON.parse(localStorage.getItems("cities"));
+
+    if (!cities) {
+        cities = [];
+    }
+};
 
 // getting city weather
 var getCurrentCityWeather = function(city) {
@@ -31,6 +50,8 @@ var getCityForcast = function(city) {
 var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
+    cities.push(cityName);
+    localStorage.setItem("cities", JSON.stringify(cities));
     if (cityName) {
         getCurrentCityWeather(cityName);
         getCityForcast(cityName);
@@ -41,8 +62,6 @@ var submitButton = function(event) {
 };
 
 var displayWeather = function(weather, searchTerm) {
-    //clearing the old data
-    weatherContainer.textContent = "";
     cityName.textContent = searchTerm;
     console.log(weather);
     console.log(weather.main.temp);
