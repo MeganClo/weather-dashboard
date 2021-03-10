@@ -8,13 +8,12 @@
 <body>
     <header>
         <h1>Weather Dashboard</h1>
-        <p>Search by City to see the current weather and a 5 day forcast.</p>
     </header>
 
     <main>
         <div>
             <div class="card">
-                <h3 class="card-header">Search by City Name</h3>
+                <h3 class="card-header">Search for a City</h3>
                 <form id="city-form">
                     <label id="form-label" for="city">Name of City</label>
                     <input name="city" id="city" type="text" autofocus="true" clas="form-input"/>
@@ -24,7 +23,8 @@
         </div>
 
         <div class="">
-            <h2 class="weather-city">Current Weather and Forcast for <span id ="city-search"></span></h2>
+            <span id ="city-search"></span>
+            <span id ="date"></span>
             <div id="weather-container" class="list"></div>
         </div>
     </main>
