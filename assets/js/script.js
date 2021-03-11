@@ -53,7 +53,7 @@ var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
     loadCities();
-    if (!cities.includes(cityName)) {
+    if (!cities.includes(cityName) && (cityName != "")) {
         cities.push(cityName);
     };
     localStorage.setItem("cities", JSON.stringify(cities));
@@ -78,11 +78,12 @@ var displayWeather = function(weather, searchTerm) {
 };
 
 var createButtons = function() {
-    cities.forEach(function() {
+    for (var i = 0; i < cities.length; i++) {
+        console.log(cities[i]);
         var btn = document.createElement("button");
-        btn.innerHTML = [].value;
+        btn.innerHTML = cities[i];
         buttons.appendChild(btn);
-    });
+    }
 };
 
 
