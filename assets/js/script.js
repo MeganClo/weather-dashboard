@@ -31,7 +31,6 @@ var getCurrentCityWeather = function(city) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=da47b6e8a518f806d11e4e81cc84a11f";
     //make request to the url
     fetch(apiUrl).then(function(response) {
-//        console.log(response);
         response.json().then(function(data) {
             displayWeather(data, city);
         }); 
@@ -40,9 +39,8 @@ var getCurrentCityWeather = function(city) {
 // getting forcast
 var getCityForcast = function(city) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=da47b6e8a518f806d11e4e81cc84a11f";
- //   make request to the url
+    //make request to the url
     fetch(apiUrl).then(function(response) {
-//        console.log(response);
         response.json().then(function(data) {
             console.log(data);
             displayForcast(data, city);
@@ -50,11 +48,12 @@ var getCityForcast = function(city) {
     });
 };
 
+// function to execute when the city is submitted
 var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
     var btn = document.createElement("button");
-    btn.className =  "city-buttons";
+    btn.className =  "city-buttons btn-block";
     btn.innerHTML = cityName;
     buttons.appendChild(btn);
     loadCities();
@@ -97,7 +96,7 @@ var createButtons = function() {
     for (var i = 0; i < cities.length; i++) {
         console.log(cities[i]);
         var btn = document.createElement("button");
-        btn.className = "city-buttons"
+        btn.className = "city-buttons btn-block"
         btn.innerHTML = cities[i];
         buttons.appendChild(btn);
     };
