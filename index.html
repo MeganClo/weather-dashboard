@@ -10,29 +10,33 @@
 </head>
 <body>
     <header class="heading text-center">
-        <h1>Weather Dashboard</h1>
+        <h1><strong>Weather Dashboard</strong></h1>
     </header>
 
-    <main>
-    
-        <div>
-            <h4>Search for a City</h4>
-            <!--<i class="bi bi-search"></i>-->
-            <div class="card input-group">
-                <form id="city-form">
-                    <input name="city" id="city" type="text" autofocus="true" clas="form-input"/>
-                    <button type="submit" class="btn"></button>
-                </form>
-            </div>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Search for a City</h4>
+                <!--<i class="bi bi-search"></i>-->
+                <div class="card input-group">
+                    <form id="city-form">
+                        <input name="city" id="city" type="text" autofocus="true" clas="form-input"/>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+                <div class ="btn-group-vertical" id="buttons">
 
-            <div class="container" id="weather-container">
+                </div>
+
+            </div>
+        
+
+            <div class="col" id="weather-container">
                 <span id ="city-search"></span>
                 <span id ="date"></span>
                 <div id="weather-conditions" class="cards"></div>
             </div>
-            <div class ="btn-group-vertical" id="buttons">
 
-            </div>
         </div>
 
     </main>
