@@ -24,11 +24,6 @@ var loadCities = function() {
     if (!cities) {
         cities = []
     };
-    cities.forEach(function() {
-        var btn = document.createElement("button");
-        btn.innerHTML = cityName;
-        buttons.appendChild(btn);
-    });
 };
 
 // getting city weather
@@ -80,13 +75,21 @@ var displayWeather = function(weather, searchTerm) {
     console.log(weather.weather[0].icon);
     console.log(weather.main.humidity);
     console.log(searchTerm);
-}
+};
 
+var createButtons = function() {
+    cities.forEach(function() {
+        var btn = document.createElement("button");
+        btn.innerHTML = [].value;
+        buttons.appendChild(btn);
+    });
+};
 
 
 weatherFormEl.addEventListener("submit", submitButton);
 
 loadCities();
+createButtons();
 console.log(cities);
 //getCurrentCityWeather("London");
 //getCityForcast("London"); 
