@@ -7,3 +7,8 @@ body {
     color: white;
     padding: 5px;
 }
+
+.card {
+    background-color: #0275d8;
+    color:white;
+}

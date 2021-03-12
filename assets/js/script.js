@@ -53,7 +53,7 @@ var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
     var btn = document.createElement("button");
-    btn.className =  "city-buttons col-12 btn-light";
+    btn.className =  "city-buttons col-12 btn btn-light";
     btn.innerHTML = cityName;
     buttons.appendChild(btn);
     loadCities();
@@ -96,7 +96,7 @@ var createButtons = function() {
     for (var i = 0; i < cities.length; i++) {
         console.log(cities[i]);
         var btn = document.createElement("button");
-        btn.className = "city-buttons col-12 btn-light"
+        btn.className = "city-buttons col-12 btn btn-light"
         btn.innerHTML = cities[i];
         buttons.appendChild(btn);
     };

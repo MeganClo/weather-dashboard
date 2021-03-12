@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <h4>Search for a City</h4>
-                <div class="card input-group">
+                <div class="input-group">
                     <div id="city-form">
                         <input name="city" id="city" type="text" autofocus="true" clas="form-input"/>
                         <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
@@ -30,10 +30,65 @@
             </div>
         
 
-            <div class="col" id="weather-container">
-                <span id ="city-search"></span>
-                <span id ="date"></span>
-                <div id="weather-conditions" class="cards"></div>
+            <div class="col-sm-8" id="weather-container">
+                <div class="container">            
+                    <h3 id ="city-search">City</h3>
+                    <h3 id ="date"></h3>
+                    <p>Temperature: <span id="temp"></span></p>
+                    <p>Humidity: <span id="humidity"></span></p>
+                    <p>Wind Speed: <span id="wind-speed"></span></p>
+                    <p>UV Index: <span id="uv"></span></p>
+                </div>    
+                <div class="container" id="weather-conditions">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card card-block">
+                                <h5 class="card-title">Forecast</h5>
+                                <p class="card-text" id="1date">date</p>
+                                <img src="" alt="">
+                                <p class="card-text" id="1temp">temp</p>
+                                <p class="card-text" id="1humidity">humidity</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card card-block">
+                                <h5 class="card-title">Forecast</h5>
+                                <p class="card-text" id="2date">date</p>
+                                <img src="" alt="">
+                                <p class="card-text" id="2temp">temp</p>
+                                <p class="card-text" id="2humidity">humidity</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card card-block">
+                                <h5 class="card-title">Forecast</h5>
+                                <p class="card-text" id="3date">date</p>
+                                <img src="" alt="">
+                                <p class="card-text" id="3temp">temp</p>
+                                <p class="card-text" id="3humidity">humidity</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card card-block">
+                                <h5 class="card-title">Forecast</h5>
+                                <p class="card-text" id="4date">date</p>
+                                <img src="" alt="">
+                                <p class="card-text" id="4temp">temp</p>
+                                <p class="card-text" id="4humidity">humidity</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card card-block">
+                                <h5 class="card-title">Forecast</h5>
+                                <p class="card-text" id="5date">date</p>
+                                <img src="" alt="">
+                                <p class="card-text" id="5temp">temp</p>
+                                <p class="card-text" id="5humidity">humidity</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
