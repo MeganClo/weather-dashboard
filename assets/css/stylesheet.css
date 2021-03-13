@@ -12,3 +12,22 @@ body {
     background-color: #0275d8;
     color:white;
 }
+
+.card-block {
+    margin-bottom: 10px;
+}
+
+.favorable {
+    color:white;
+    background-color: green;
+}
+
+.moderate {
+    color:white;
+    background-color: orange;
+}
+
+.severe {
+    color:white;
+    background-color:red;
+}
