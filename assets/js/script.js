@@ -80,6 +80,7 @@ var getCityForecast = function(city) {
 var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
+    console.log(cityName);
     var btn = document.createElement("button");
     btn.className =  "city-buttons col-12 btn btn-light";
     btn.innerHTML = cityName;
@@ -159,9 +160,14 @@ var createButtons = function() {
 
 weatherFormEl.addEventListener("submit", submitButton);
 
+// window.onload = function() {
+//     getCityForecast("Pacifica");
+//     getCurrentCityWeather("Pacifica");
+// };
+
 loadCities();
 createButtons();
 
 // loading a city on the page so it looks nice
-getCityForecast("Pacifica");
-getCurrentCityWeather("Pacifica");
+// getCityForecast("Pacifica");
+// getCurrentCityWeather("Pacifica");
