@@ -1,25 +1,25 @@
-// targetting where the city name will be displayed
+// targeting where the city name will be displayed
 var cityName = document.querySelector("#city-search");
 
-// targetting where the date will be displayed 
+// targeting where the date will be displayed 
 var currentDate = document.getElementById("date");
 
-// targetting the form
+// targeting the form
 var weatherFormEl = document.getElementById("city-form");
 
-// targetting the button div
+// targeting the button div
 var buttons = document.getElementById("buttons");
 
 // setting a variable to store the cities from local storage
 var cities = [];
 
-// targetting the input
+// targeting the input
 var cityInputEl = document.getElementById("city");
 
 //displaying the current date
 currentDate.textContent = moment().format("M/DD/YYYY");
 
-// targetting forecast dates
+// targeting forecast dates
 document.getElementById("1date").innerHTML = moment().add(1, "d").format("M/DD/YYYY");
 document.getElementById("2date").innerHTML = moment().add(2, "d").format("M/DD/YYYY");
 document.getElementById("3date").innerHTML = moment().add(3, "d").format("M/DD/YYYY");
@@ -147,7 +147,7 @@ var createButtons = function() {
         btn.innerHTML = cities[i];
         buttons.appendChild(btn);
     };
-    // targetting the city buttons
+    // targeting the city buttons
     var cityButtons = document.querySelectorAll(".city-buttons");
     for (var i =0; i < cityButtons.length; i ++) {
         cityButtons[i].addEventListener("click", function(event) {
