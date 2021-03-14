@@ -80,7 +80,6 @@ var getCityForecast = function(city) {
 var submitButton = function(event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
-    console.log(cityName);
     var btn = document.createElement("button");
     btn.className =  "city-buttons col-12 btn btn-light";
     btn.innerHTML = cityName;
