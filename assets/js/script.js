@@ -160,14 +160,9 @@ var createButtons = function() {
 
 weatherFormEl.addEventListener("submit", submitButton);
 
-// window.onload = function() {
-//     getCityForecast("Pacifica");
-//     getCurrentCityWeather("Pacifica");
-// };
-
 loadCities();
 createButtons();
 
-// loading a city on the page so it looks nice
-// getCityForecast("Pacifica");
-// getCurrentCityWeather("Pacifica");
+//loading a city on the page so it looks nice
+getCityForecast("Pacifica");
+getCurrentCityWeather("Pacifica");
