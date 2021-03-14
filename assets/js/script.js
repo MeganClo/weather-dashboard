@@ -91,7 +91,7 @@ var submitButton = function(event) {
     localStorage.setItem("cities", JSON.stringify(cities));
     if (cityName) {
         getCurrentCityWeather(cityName);
-        getCityforecast(cityName);
+        getCityForecast(cityName);
         cityInputEl.value="";
     } else {
         alert("Please enter a City name");
@@ -116,6 +116,7 @@ var displayForecast = function(forecast, searchTerm) {
     document.getElementById("1humidity").innerHTML = forecast.list[1].main.humidity;
     iconCode = forecast.list[1].weather[0].icon;
     document.getElementById("1img").src = "https://openweathermap.org/img/w/" + iconCode + ".png";
+    document.getElementById("1img").setAttribute("alt", "weather-icon")
     // dislaying the second day
     document.getElementById("2temp").innerHTML = forecast.list[9].main.temp;
     document.getElementById("2humidity").innerHTML = forecast.list[9].main.humidity;
@@ -156,9 +157,11 @@ var createButtons = function() {
     }
 };
 
-
 weatherFormEl.addEventListener("submit", submitButton);
 
 loadCities();
 createButtons();
 
+// loading a city on the page so it looks nice
+getCityForecast("Pacifica");
+getCurrentCityWeather("Pacifica");
